@@ -1,0 +1,9 @@
+<button routerLink="/posts">back</button>
+<div>
+    <p>Post: {{postId}}</p>
+    <h5>{{post.id}} Title: {{post.title}}</h5>
+    <p>{{post.body}}</p>
+    <button *ngIf="hide == false" (click)="getPostComments()" (click)="toggleOpen()">view comments</button>
+    <button *ngIf="hide != false" (click)="toggleClose()">close comments</button>
+    <app-post-comments [comments]="comments" *ngIf="hide != false"></app-post-comments>
+</div>
